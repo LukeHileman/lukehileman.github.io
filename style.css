@@ -12,6 +12,7 @@ h5 {
     max-height: 100px;
     margin-top: auto;
     margin-bottom: auto;
+    float: left;
 }
 
 .card {
