@@ -1,0 +1,49 @@
+h5 {
+    font-size: 20px;
+}
+
+.jumbotron {
+    background-image: url(img/farm.jpg);
+    background-size: cover;
+}
+
+.item-image {
+    max-width: 200px;
+    max-height: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card {
+    display: flex;
+    /* box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .2); */
+    border: 2px solid rgba(207, 207, 207, 0.37);
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body {
+    /* display: flex; */
+
+
+}
+
+.profile-image {
+    max-height: 30px;
+    max-width: 30px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.item-info {
+    margin: auto;
+}
+
+
+.profile-image {
+    border-radius: 50%;
+}
