@@ -1,79 +1,89 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Oh-Hi-Market</title>
-    
-<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCBMTOiUriRpOiYWRMRQb6RiHb-AK-6Z-g",
-    authDomain: "ohhimarket.firebaseapp.com",
-    databaseURL: "https://ohhimarket.firebaseio.com",
-    projectId: "ohhimarket",
-    storageBucket: "ohhimarket.appspot.com",
-    messagingSenderId: "655502097475"
-  };
-  firebase.initializeApp(config);
-</script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Farmer's Market</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
-        </p>
-        <hr class="my-4" />
-        <p>
-          It uses utility classes for typography and spacing to space content
-          out within the larger container.
-        </p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </div>
+</head>
 
-     
-      <h2>Currently selling</h2>
-      <hr />
+<body>
 
-      <div class="card">
-        <img src="img/grapes.jpeg" alt="grapes" class="item-image" />
-        <div class="card-body">
-          <div class="item-info">
-            <h5 class="item-name">Fresh Grapes</h5>
-            <p class="item-price">
-              $ 0.67 / oz
-            </p>
-          </div>
-          <p>
-            <img src="img/marco.jpg" alt="marco" class="profile-image" />
-            <strong>Marco Silvia</strong>
-          </p>
-          <a href="#">Rate this seller</a>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" placeholder="enter name">
+            <button>Enter</button>
+            <br>
+            <input type="text" placeholder="item name">
+            <button>Enter</button>
+            <br>
+            <input type="text" placeholder="price per">
+            <button>Enter</button>
+            <br>
+            <input type="text" placeholder="enter name">
+            <button>Enter</button>
+            <br>
+            <input type="text" placeholder="enter name">
+            <button>Enter</button>
         </div>
-      </div>
-
-      <div class="card">
-        <img src="img/grapes.jpeg" alt="grapes" class="item-image" />
-        <div class="card-body">
-          <div class="item-info">
-            <h5 class="item-name">Fresh Grapes</h5>
-            <p class="item-price">
-              $ 0.67 / oz
-            </p>
-          </div>
-          <p>
-            <img src="img/marco.jpg" alt="marco" class="profile-image" />
-            <strong>Marco Silvia</strong>
-          </p>
-          <a href="#">Rate this seller</a>
-        </div>
-      </div>
     </div>
-  </body>
+
+
+    <div class="header">
+        <h1>Oh-Hi Market</h1>
+    </div>
+    <div class="button">
+        <button type="button" class="btn btn-success" id="list-button">Make a listing</button>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Currently selling</h2>
+        <hr />
+
+        <ul>
+            <li class="new-item">
+                <div class="card">
+                    <img src="img/grapes.jpeg" alt="grapes" class="item-image" />
+                    <div class="card-body">
+                        <div class="item-info">
+                            <h5 class="item-name">Fresh Grapes</h5>
+                            <p class="item-price">
+                                $ 0.67 / oz
+                            </p>
+                        </div>
+                        <p>
+                            <img src="img/marco.jpg" alt="marco" class="profile-image" />
+                            <strong>Marco Silvia</strong>
+                        </p>
+                        <a href="#">Rate this seller</a>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
 </html>
