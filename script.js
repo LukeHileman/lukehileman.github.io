@@ -1,18 +1,47 @@
 var list = document.getElementsByClassName("new-item");
+var button = document.getElementById("add-list");
+var ul = document.querySelector("ul");
 
 function createList() {
-    var li = document.createElement(list);
-    ul.appendChild(li);
+    var div = document.createElement('div');
+    div.setAttribute("class", "card");
+    div.innerHTML = document.getElementById('blockOfStuff').innerHTML;
+    document.getElementById('targetElement').appendChild(div);
+    // ul.appendChild(li);
 }
 
 function getFirstName() {
     var firstName = document.getElementById("first-name").value;
 }
 
+function addListAfterClick() {
+    createList();
+}
 
-document.getElementById("list-button").onclick = function () {
-    location.href = "createListing.html";
-};
+button.addEventListener("click", addListAfterClick);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Get the modal
 var modal = document.getElementById('myModal');
