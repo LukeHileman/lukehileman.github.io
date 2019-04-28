@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Farmer's Market</title>
-    <!-- Latest compiled and minified CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Listing</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
 
@@ -20,97 +19,33 @@
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="login">
-                <h2 class="login-header">Login</h2>
-                <p>
-                    Username
-                    <input type="text" placeholder="Username">
-                </p>
-                <br>
-                <p>
-                    Password
-                    <input type="password" placeholder="Password">
-                </p>
-
-                <br>
-                <button class="submit">Log In</button>
-            </div>
-
-        </div>
-    </div>
-
-    <div id="myModal2" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close2">&times;</span>
-            <div class="login">
-                <h2 class="login-header">Sign Up</h2>
-                <p>
-                    Username
-                    <input type="text" placeholder="Username">
-                </p>
-                <br>
-                <p>
-                    Password
-                    <input type="password" placeholder="Password">
-                </p>
-
-                <br>
-
-                <button class="submit">Sign Up</button>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="header">
-        <h1>Oh-Hi Market</h1>
-    </div>
-    <div class="button">
-        <button type="button" class="btn btn-success" id="list-button">Login</button>
-        <button type="button" class="btn" id="signup-button">Sign Up</button>
-    </div>
-    <br>
     <div class="container">
-        <h2>Currently selling</h2>
-        <hr />
+        <div class="input-form">
+            <h1>Create Listing</h1>
+            <br>
+            <p> Enter Item Name:
+                <input type="text" placeholder="Item Name" id="item-name">
+                <br>
+            </p>
+            <p> Enter price per pound:
+                $ <input type="text" placeholder="Price" id="item-price">
+                <br>
+            </p>
+            <form action="#">
+                Upload image:
+                <input type="file" name="pic" accept="image/*">
+                <input type="submit" class="submit-listing">
+            </form>
+        </div>
 
-        <ul>
-            <li class="new-item">
-                <div class="card">
-                    <img src="img/grapes.jpeg" alt="grapes" class="item-image" />
-                    <div class="card-body">
-                        <div class="item-info">
-                            <h5 class="item-name">Fresh Grapes</h5>
-                            <p class="item-price">
-                                $ 0.67 / oz
-                            </p>
-                        </div>
-                        <p>
-                            <img src="img/marco.jpg" alt="marco" class="profile-image" />
-                            <strong>Marco Silvia</strong>
-                        </p>
-                        <a href="#">Rate this seller</a>
-                    </div>
-                </div>
-
-            </li>
-        </ul>
 
     </div>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
